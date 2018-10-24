@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mobtimer</title>
+  <script src="index.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <script src='https://code.responsivevoice.org/responsivevoice.js' defer></script>
+</head>
+
+<body>
+
+  <div class="centered w100 h100">
+
+    <div class="setup">
+      <div class="centered mobtimer-layout">
+        <div class="mobtimer-left">
+          <div class="mobtimer-form">
+            <input class="input" id="mobtime" type="number" min="1" max="15" placeholder="5min" class="mobtimer-input-time" />
+            <div class="mobtimer-persons">
+              <input type="text" class="mobtimer-input-person" placeholder="Member 1">
+              <input type="text" class="mobtimer-input-person" placeholder="Member 2">
+              <input type="text" class="mobtimer-input-person" placeholder="Member 3">
+              <input type="text" class="mobtimer-input-person" placeholder="Member 4">
+              <input type="text" class="mobtimer-input-person" placeholder="Member 5">
+              <input type="text" class="mobtimer-input-person" placeholder="Member 6">
+            </div>
+          </div>
+          <button id="btn-init" class="mobtimer-btn-start">Start Timer</button>
+        </div>
+        <div class="mobtimer-right">
+          <div class="mobtimer-sessions w100 h100">
+            <!-- Map History -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fullscreen hidden w100 h100">
+      <div class="mobtimer-fullscreen w100 h100">
+        <div class="mobtimer-list">
+          <!-- LIST HERE -->
+        </div>
+        <div class="mobtimer-status centered">
+          <h1 id="currentMember">
+            <!-- MEMBER -->
+          </h1>
+          <h1 id="time">
+            <!-- TIME -->
+          </h1>
+        </div>
+        <div class="mobtimer-controls">
+          <button id="btn-reset" class="btn-round">
+            <!-- RESET TIMER -->
+            <i class="fas fa-undo-alt"></i>
+          </button>
+          <button id="btn-previous" class="btn-round">
+            <!-- PREVIOUS TIMER -->
+            <i class="fas fa-step-backward"></i>
+          </button>
+          <!-- TOGGLE THESE -->
+          <button id="btn-pause" class="btn-round">
+            <!-- PAUSE TIMER -->
+            <i class="fas fa-pause"></i>
+          </button>
+          <button id="btn-start" class="btn-round hidden">
+            <!-- START TIMER -->
+            <i class="fas fa-play"></i>
+          </button>
+          <!-- TOGGLE THESE -->
+          <button id="btn-next" class="btn-round">
+            <!-- NEXT TIMER -->
+            <i class="fas fa-step-forward"></i>
+          </button>
+          <button id="btn-shuffle" class="btn-round">
+            <!-- SHUFFLE TIMER -->
+            <i class="fas fa-random"></i>
+          </button>
+          <div class="mobtimer-controls-notifications">
+            <div class="tooltip">Notifications</div>
+            <button ref="alarm" id="btn-alarm" class="btn-round-sm">
+              <!-- ENABLE ALARM -->
+              <i class="fas fa-bell"></i>
+            </button>
+            <button ref="notification" id="btn-notification" class="btn-round-sm">
+              <!-- ENABLE NOTIFICATION-->
+              <i class="fas fa-exclamation-circle"></i>
+            </button>
+            <button ref="tts" id="btn-tts" class="btn-round-sm">
+              <!-- ENABLE TTS -->
+              <i class="fas fa-robot"></i>
+            </button>
+            <!-- MICROPHONE IF FIREFOX -->
+          </div>
+          <div class="mobtimer-controls-settings">
+            <div class="tooltip">Settings</div>
+            <button ref="exit" id="btn-exit" class="btn-round-sm">
+              <i class="fas fa-arrow-circle-left"></i>
+            </button>
+            <button ref="togglePause" id="btn-togglePause" class="btn-round-sm">
+              <i class="fas fa-pause-circle"></i>
+            </button>
+            <button ref="toggleGradient" id="btn-toggleGradient" class="btn-round-sm">
+              <i class="fas fa-palette"></i>
+            </button>
+          </div>
+
+
+
+          <div class="mobtimer-controls--mobile mobtimer-controls-notifications">
+              <div class="tooltip">Settings/Notifications</div>
+              <button ref="exit" id="btn-exit" class="btn-round-sm">
+                <i class="fas fa-arrow-circle-left"></i>
+              </button>
+              <button ref="togglePause" id="btn-togglePause" class="btn-round-sm">
+                <i class="fas fa-pause-circle"></i>
+              </button>
+              <button ref="toggleGradient" id="btn-toggleGradient" class="btn-round-sm">
+                <i class="fas fa-palette"></i>
+              <button ref="alarm" id="btn-alarm" class="btn-round-sm">
+                <!-- ENABLE ALARM -->
+                <i class="fas fa-bell"></i>
+              </button>
+              <button ref="notification" id="btn-notification" class="btn-round-sm">
+                <!-- ENABLE NOTIFICATION-->
+                <i class="fas fa-exclamation-circle"></i>
+              </button>
+              <button ref="tts" id="btn-tts" class="btn-round-sm">
+                <!-- ENABLE TTS -->
+                <i class="fas fa-robot"></i>
+              </button>
+              <!-- MICROPHONE IF FIREFOX -->
+              </button>
+            
+          </div>
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
